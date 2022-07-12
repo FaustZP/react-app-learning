@@ -1,3 +1,7 @@
+* {
+  color: #fff;
+}
+
 .sign_in_btn {
   background: linear-gradient(99.05deg, #bc3cd8 0.07%, #c54b8c 106.32%);
   cursor: pointer;
@@ -36,10 +40,153 @@
 .user-pic__btn {
   margin-left: 30px;
   cursor: pointer;
-  display: initial;
+  display: none;
 }
 
 .user-pic__btn:hover {
   transform: scale(1.2);
   transition: transform 0.4s;
+}
+
+.modal-button {
+  width: 100%;
+  max-width: 320px;
+  padding: 12px 0;
+  background: linear-gradient(99.05deg, #bc3cd8 0.07%, #c54b8c 106.32%);
+  border-radius: 5px;
+  text-align: center;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 23px;
+  margin: 22px 0px;
+  position: relative;
+  display: inline-block;
+}
+
+.modal-button span {
+  position: relative;
+
+  z-index: 1;
+}
+
+.modal-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(99.05deg, #451650 0.07%, #612445 106.32%);
+  border-radius: 3.5px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.modal-button:hover::after {
+  opacity: 1;
+}
+
+.get_it_btn {
+  background: linear-gradient(99.05deg, #bc3cd8 0.07%, #c54b8c 106.32%);
+  cursor: pointer;
+  padding: 10px 16px;
+  border-radius: 3.5px;
+  font-weight: 700;
+  transition: 0.3s;
+  position: relative;
+  line-height: 13px;
+}
+
+.get_it_btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.get_it_btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(99.05deg, #451650 0.07%, #612445 106.32%);
+  border-radius: 3.5px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.get_it_btn:hover::after {
+  opacity: 1;
+}
+
+.start {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: relative;
+  background: linear-gradient(99.05deg, #bc3cd8 0.07%, #c54b8c 106.32%);
+  cursor: pointer;
+  padding: 9px 15px;
+  border-radius: 3.5px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  margin-left: 10px;
+  display: flex;
+}
+
+.start span {
+  position: relative;
+  z-index: 5;
+}
+
+.start img {
+  width: 0.6em;
+  z-index: 5;
+}
+
+.start::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(99.05deg, #451650 0.07%, #612445 106.32%);
+  border-radius: 3.5px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1;
+}
+
+.start:hover:after {
+  opacity: 1;
+}
+
+@media (max-width: 530px) {
+  .get_it_btn {
+    max-width: 209px;
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+    padding: 11px 55px;
+  }
+
+  .modal-button {
+    max-width: 209px;
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+    padding: 11px 44px;
+    line-height: 13px;
+  }
 }

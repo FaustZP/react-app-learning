@@ -2,6 +2,8 @@ import React from "react";
 import "./style.css";
 import { Button } from "../Button/Button";
 import { UserButton } from "../Button/Button";
+import PurpleTop from "../../asset/img/bg-semisphere-top.png";
+import { NavLink } from "../NavLink/NavLink";
 
 export const Header = () => {
   return (
@@ -11,20 +13,16 @@ export const Header = () => {
           <a href="index.html" className="logo">
             Light
           </a>
+          <img src={PurpleTop} alt="" class="bg-img-head" />
+
           <div className="navigation">
             <nav>
-              <a href="index.html" className="nav_link">
-                Home
-              </a>
-              <a href="#" className="nav_link">
-                Company
-              </a>
-              <a href="" className="nav_link">
-                Feautres
-              </a>
+              <NavLink link="Home" sign="Home" />
+              <NavLink link="Company" sign="Company" />
+              <NavLink link="Features" sign="Features" />
             </nav>
             <Button class="sign_in_btn" id="signButton" span="Sign In" />
-            <UserButton />
+            <UserButton id="userButton" />
           </div>
         </div>
       </header>
