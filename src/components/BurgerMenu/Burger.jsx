@@ -6,28 +6,24 @@ import { NavLink } from "../NavLink/NavLink";
 
 export const Burger = () => {
   return (
-    <div className="hamburger-menu">
-      <input type="checkbox" id="menu__toggle" className="menu__toggle" />
+    <div className="burger-menu">
+      <input type="checkbox" className="menu__toggle" />
       <label for="menu__toggle" className="menu__btn">
         <span></span>
       </label>
       <ul className="menu-box">
         <li>
-          <Button
-            class="burger-sign__btn"
-            id="signButtonBurger"
-            span="Sign In"
-          />
+          <Button className="burger-sign__btn" span="Sign In" />
         </li>
-        <UserButton id="userBurgerButton" />
+        <UserButton />
         <li>
-          <NavLink link="Home" sign="Home" />
+          <NavLink link="#Home" label="Home" />
         </li>
         <li>
-          <NavLink link="Company" sign="Company" />
+          <NavLink link="#Company" label="Company" />
         </li>
         <li>
-          <NavLink link="Features" sign="Features" />
+          <NavLink link="#Features" label="Features" />
         </li>
       </ul>
     </div>

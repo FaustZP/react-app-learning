@@ -154,7 +154,7 @@
 }
 
 @media (min-width: 532px) {
-  .hamburger-menu {
+  .burger-menu {
     display: none;
   }
 }
