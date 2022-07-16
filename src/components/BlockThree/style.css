@@ -1,0 +1,45 @@
+.third-block {
+  position: relative;
+  display: flex;
+  padding: 0 60px;
+  align-self: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.plank {
+  position: absolute;
+  max-width: 100%;
+  min-width: 10%;
+  height: auto;
+  z-index: -5;
+  align-self: center;
+}
+
+.plank-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-2-header {
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  max-width: 292px;
+}
+
+.thumb {
+  padding: 7px 0;
+  max-width: 100%;
+  min-width: 5%;
+  height: auto;
+}
+
+.thumb:hover {
+  transform: scale(1.1);
+  transition: transform 0.4s;
+}

@@ -1,0 +1,17 @@
+.second-block {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0px 60px;
+  position: relative;
+  margin-bottom: 30px;
+  font-family: "Inter";
+}
+
+.semi-left {
+  position: absolute;
+  left: 0;
+  bottom: 160px;
+  z-index: -1;
+  filter: blur(50px);
+}

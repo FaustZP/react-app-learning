@@ -1,0 +1,70 @@
+.sixth-block {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 0;
+  padding: 0 90px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.semi-left-2 {
+  position: absolute;
+  left: -5px;
+  z-index: 0;
+  filter: blur(50px);
+}
+
+.sphere {
+  position: absolute;
+  right: 0;
+  opacity: 0.5;
+}
+
+.bottom-text {
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+}
+
+.bottom-text h2 {
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 24px;
+}
+
+.bottom-text p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+}
+
+.icons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+  row-gap: 20px;
+  align-items: baseline;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 11px;
+  margin-top: 5px;
+}

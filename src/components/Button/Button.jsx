@@ -2,6 +2,7 @@ import React from "react";
 import "./style.css";
 import UserImage from "../../asset/img/user-avatar-1.png";
 import StartArrow from "../../asset/icon/start-arrow.svg";
+
 export const Button = (prop) => {
   return (
     <button className={prop.buttonclass}>

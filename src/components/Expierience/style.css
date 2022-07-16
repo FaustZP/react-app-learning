@@ -1,0 +1,25 @@
+.exp_descr {
+  display: flex;
+  flex-direction: column;
+  max-width: 218px;
+  align-self: flex-end;
+  align-items: flex-start;
+}
+
+.exp_descr_header {
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 21px;
+  line-height: 33px;
+  margin-bottom: 20px;
+}
+
+.exp_descr_body {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  margin-bottom: 20px;
+}

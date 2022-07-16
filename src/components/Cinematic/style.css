@@ -1,0 +1,54 @@
+.stars {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 400px;
+  position: relative;
+}
+
+.vr_img_bg {
+  z-index: 1;
+}
+.stars__img {
+  position: absolute;
+  right: 60px;
+}
+
+.cinematic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+}
+
+.cinematic_descr {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 50px;
+  margin-right: 17px;
+  z-index: 2;
+}
+
+.cimematic_header {
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 19px;
+  margin-bottom: 20px;
+}
+
+.line {
+  background-color: #fff;
+  width: 152px;
+  height: 1px;
+}
+
+.cinematic_body {
+  max-width: 205px;
+  font-size: 11px;
+  margin-top: 20px;
+}

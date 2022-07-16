@@ -4,8 +4,8 @@ import "./style.css";
 
 export const UserMenu = () => {
   return (
-    <div class="menu" id="userMenu">
-      <div class="menu-header">
+    <div className="menu" id="userMenu">
+      <div className="menu-header">
         <p>User menu</p>
         <button className="menu-close-btn" id="closeMenuButton">
           <img src={Chevron} alt="" />

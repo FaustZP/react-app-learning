@@ -1,0 +1,22 @@
+.headset_photo {
+  display: flex;
+  min-height: 390px;
+  position: relative;
+}
+
+.headset_photo_1 {
+  margin-right: 40px;
+  align-self: flex-start;
+  max-width: 100%;
+  width: 60%;
+  min-width: 10%;
+  height: auto;
+}
+
+.headset_photo_2 {
+  align-self: flex-end;
+  max-width: 100%;
+  width: 60%;
+  min-width: 10%;
+  height: auto;
+}

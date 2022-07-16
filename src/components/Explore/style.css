@@ -1,0 +1,68 @@
+.description {
+  display: flex;
+  max-width: 330px;
+  z-index: 2;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.description_header {
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 31px;
+  margin-bottom: 24px;
+}
+
+.description_body {
+  margin-bottom: 24px;
+}
+
+.explore {
+  margin-left: 24px;
+  font-weight: 700;
+}
+
+.explore:hover {
+  color: #bc3cd8;
+}
+
+.online_counter {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.avatars_row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-right: 12px;
+  position: relative;
+}
+
+.avatars_row__pic:nth-child(2) {
+  position: absolute;
+  left: 26px;
+}
+
+.avatars_row__pic:nth-child(3) {
+  position: absolute;
+  left: 54px;
+}
+
+.avatars_row__pic:nth-child(4) {
+  position: absolute;
+  left: 78px;
+}
+
+.circle-icon {
+  margin-right: 12px;
+}
+
+@media (max-width: 550px) {
+  .explore span {
+    display: none;
+  }
+}
