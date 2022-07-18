@@ -1,7 +1,7 @@
 import React from "react";
 import Arrow from "../../asset/icon/arrow.svg";
 import Hands from "../../asset/img/hands.png";
-import { Button } from "../Button/Button";
+import { StartButton } from "../Button/Button";
 import "./style.css";
 
 export const Footer = () => {
@@ -25,10 +25,7 @@ export const Footer = () => {
                 required
                 className="footer-input__email"
               />
-              <Button label="Start" buttonclass="start">
-                &nbsp;
-                <img src={Arrow} alt="arrow" />
-              </Button>
+              <StartButton label="Start&nbsp;" buttonclass="start" />
             </form>
           </div>
           <img src={Hands} alt="hands" className="hands" />

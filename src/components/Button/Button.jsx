@@ -11,9 +11,19 @@ export const Button = (prop) => {
   );
 };
 
-export const UserButton = (prop) => {
+export const StartButton = (prop) => {
   return (
-    <button className="user-pic__btn" id={prop.id}>
+    <button className={prop.buttonclass}>
+      <span>
+        {prop.label} <img src={StartArrow} alt="arrow" />
+      </span>
+    </button>
+  );
+};
+
+export const UserButton = () => {
+  return (
+    <button className="user-pic__btn">
       <img src={UserImage} alt="User Pic"></img>
     </button>
   );

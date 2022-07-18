@@ -1,0 +1,45 @@
+.select {
+  position: absolute;
+  right: 60px;
+  display: flex;
+  max-width: 8em;
+  min-width: 103px;
+  width: 100%;
+  height: 2em;
+  line-height: 2;
+  background: #5c6664;
+  border-radius: 0.25em;
+  border: 1px solid #5c6664;
+}
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  cursor: pointer;
+  pointer-events: none;
+  transition: 0.25s all ease;
+}
+
+.select:hover::after {
+  color: #bc3cd8;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  background: #000000;
+  background-image: none;
+  flex: 1;
+  padding: 0 0.5em;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1em;
+}
+select::-ms-expand {
+  display: none;
+}
