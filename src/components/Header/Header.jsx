@@ -7,25 +7,23 @@ import "./style.css";
 
 export const Header = () => {
   return (
-    <div>
-      <header>
-        <div className="head">
-          <a href="index.html" className="logo">
-            Light
-          </a>
-          <img src={PurpleTop} alt="" className="bg-img-head" />
+    <header>
+      <div className="head">
+        <a href="index.html" className="logo">
+          Light
+        </a>
+        <img src={PurpleTop} alt="" className="bg-img-head" />
 
-          <div className="navigation">
-            <nav>
-              <NavLink link="#Home" label="Home" />
-              <NavLink link="#Company" label="Company" />
-              <NavLink link="#Features" label="Features" />
-            </nav>
-            <Button buttonclass="sign_in_btn" label="Sign In" />
-            <UserButton id="userButton" />
-          </div>
+        <div className="navigation">
+          <nav>
+            <NavLink link="#Home" label="Home" />
+            <NavLink link="#Company" label="Company" />
+            <NavLink link="#Features" label="Features" />
+          </nav>
+          <Button buttonclass="sign_in_btn" label="Sign In" />
+          <UserButton id="userButton" />
         </div>
-      </header>
-    </div>
+      </div>
+    </header>
   );
 };

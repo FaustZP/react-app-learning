@@ -139,3 +139,10 @@
 .start:hover:after {
   opacity: 1;
 }
+
+@media (max-width: 550px) {
+  .foot {
+    margin: 0 16px;
+    padding-left: 15px;
+  }
+}

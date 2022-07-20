@@ -172,6 +172,42 @@
   opacity: 1;
 }
 
+.burger-sign__btn {
+  background: linear-gradient(99.05deg, #bc3cd8 0.07%, #c54b8c 106.32%);
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 3.5px;
+  font-weight: 700;
+  font-size: 13px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.burger-sign__btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.burger-sign__btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(99.05deg, #451650 0.07%, #612445 106.32%);
+  border-radius: 3.5px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.burger-sign__btn:hover::after {
+  opacity: 1;
+}
+
 @media (max-width: 530px) {
   .get_it_btn {
     max-width: 209px;

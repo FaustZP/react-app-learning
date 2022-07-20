@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "../Button/Button";
 import { UserButton } from "../Button/Button";
-import "./style.css";
 import { NavLink } from "../NavLink/NavLink";
+import "./style.css";
 
 export const Burger = () => {
   return (
@@ -13,7 +13,7 @@ export const Burger = () => {
       </label>
       <ul className="menu-box">
         <li>
-          <Button className="burger-sign__btn" span="Sign In" />
+          <Button buttonclass="burger-sign__btn" label="Sign In" />
         </li>
         <UserButton />
         <li>
