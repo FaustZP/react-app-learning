@@ -5,7 +5,7 @@ import StartArrow from "../../asset/icon/start-arrow.svg";
 
 export const Button = (prop) => {
   return (
-    <button className={prop.buttonclass}>
+    <button className={prop.buttonclass} onClick={prop.onClick}>
       <span>{prop.label}</span>
     </button>
   );

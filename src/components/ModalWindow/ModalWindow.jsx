@@ -4,15 +4,21 @@ import ModalSphereImg from "../../asset/img/bg-quarter-sphere.png";
 import { ModalButton } from "../Button/Button";
 import "./style.css";
 
-export const SignModalWindow = () => {
+export const SignModalWindow = ({ open, onSubmit, onClose }) => {
   return (
-    <div className="modal-sign-container">
+    <div
+      className={`modal-sign-container ${
+        open ? "modal-sign-container-open" : ""
+      }`}
+    >
       <div className="modal-content">
         <div className="modal-top">
           <h2 className="top-sign">Sign in</h2>
-          <span className="close-btn">&times;</span>
+          <button className="close-btn" onClick={onClose}>
+            &times;
+          </button>
         </div>
-        <form action="" className="modal-input-form">
+        <form action="#" onSubmit={onSubmit} className="modal-input-form">
           <input
             type="email"
             placeholder="Your Email"
@@ -25,7 +31,9 @@ export const SignModalWindow = () => {
             className="input"
             required
           />
-          <ModalButton label="Sign In" />
+          <ModalButton label="Sign In">
+            <input type="submit" value="" />
+          </ModalButton>
         </form>
       </div>
     </div>

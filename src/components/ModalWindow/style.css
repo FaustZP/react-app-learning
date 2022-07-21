@@ -66,10 +66,15 @@
   opacity: 1;
 }
 
+.modal-sign-container-open,
+.modal-card-container-open,
+.modal-item-container-open {
+  display: initial;
+}
+
 .modal-sign-container,
 .modal-item-container,
 .modal-card-container {
-  display: none;
   position: fixed;
   z-index: 30;
   top: 0;
