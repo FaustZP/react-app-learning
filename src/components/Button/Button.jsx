@@ -13,7 +13,7 @@ export const Button = (prop) => {
 
 export const StartButton = (prop) => {
   return (
-    <button className={prop.buttonclass}>
+    <button className={prop.buttonclass} onClick={prop.onClick}>
       <span>
         {prop.label} <img src={StartArrow} alt="arrow" />
       </span>

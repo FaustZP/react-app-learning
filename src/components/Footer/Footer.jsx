@@ -18,14 +18,20 @@ export const Footer = () => {
               We specialize in creating visual identities for products and
               brands in your company.
             </p>
-            <form className="footer-input">
+            <form
+              target="_blank"
+              action="https://www.youtube.com/watch?v=_LuyQV_iSJk"
+              className="footer-input"
+            >
               <input
                 type="email"
                 placeholder="Your Email"
                 required
                 className="footer-input__email"
               />
-              <StartButton label="Start&nbsp;" buttonclass="start" />
+              <StartButton label="Start&nbsp;" buttonclass="start">
+                <input type="submit" value="" />
+              </StartButton>
             </form>
           </div>
           <img src={Hands} alt="hands" className="hands" />

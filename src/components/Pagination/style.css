@@ -1,9 +1,13 @@
 .pagination {
   display: flex;
-  justify-content: center;
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translate(-50%);
+  cursor: pointer;
 }
 
-.pagination button {
+.pagination li {
   background: linear-gradient(99.05deg, #bc3cd8 0.07%, #c54b8c 106.32%);
   cursor: pointer;
   padding: 5px 10px;
@@ -14,12 +18,12 @@
   line-height: 13px;
 }
 
-.pagination button span {
+.pagination li a {
   position: relative;
   z-index: 1;
 }
 
-.pagination button::after {
+.pagination li::after {
   content: "";
   position: absolute;
   top: 0;
@@ -34,11 +38,11 @@
   transition: opacity 0.3s;
 }
 
-.pagination button:hover::after {
+.pagination li:hover::after {
   opacity: 1;
 }
 
-.pagination:not(last-child) button {
+.pagination:not(last-child) li {
   margin-right: 12px;
 }
 

@@ -1,6 +1,8 @@
 import React from "react";
 import ModalImage from "../../asset/icon/head_line_p2.svg";
 import ModalSphereImg from "../../asset/img/bg-quarter-sphere.png";
+import PurpleLeft from "../../asset/img/bg-semisphere-left2.png";
+import PurpleRight from "../../asset/img/bg-semisphere-right.png";
 import { ModalButton } from "../Button/Button";
 import "./style.css";
 
@@ -95,6 +97,34 @@ export const CardModalWindow = ({ open, onSubmit, onClose }) => {
           </form>
         </main>
       </div>
+    </div>
+  );
+};
+
+export const ItemModalWindow = ({ open, onClose, item }) => {
+  return (
+    <div
+      className={`modal-item-container ${
+        open ? "modal-item-container-open" : ""
+      }`}
+    >
+      <span id="closeItem" className="close-btn" onclick={onClose}>
+        &times;
+      </span>
+      <div>
+        <img
+          src={`./database/images/img${item.cardImg}.jpg`}
+          alt={item.cardName}
+          className="item-picture"
+        />
+      </div>
+      <h2 className="item-header">{item.cardName}</h2>
+      <p className="item-descr">{item.cardText}</p>
+      <button className="get_it_btn">
+        <span>Get it Now</span>
+      </button>
+      <img src={PurpleLeft} alt="" className="semi-left" />
+      <img src={PurpleRight} alt="" className="semi-right" />
     </div>
   );
 };
