@@ -1,5 +1,6 @@
 export const REVIEWS = [
   {
+    id: 0,
     feedUser: "Denny Hilguston",
     feedUserURL: "https://instagram.com",
     feedUserAdress: "@denny.hill",
@@ -8,6 +9,7 @@ export const REVIEWS = [
 credit card anymore. What a relief!”`,
   },
   {
+    id: 1,
     feedUser: "Vani Pandey",
     feedUserURL: "https://instagram.com",
     feedUserAdress: "@vani.pandey",
@@ -16,6 +18,7 @@ credit card anymore. What a relief!”`,
  modern console generation leap."`,
   },
   {
+    id: 2,
     feedUser: "Milly Singh",
     feedUserURL: "https://instagram.com",
     feedUserAdress: "@milly.singh",
@@ -25,4 +28,27 @@ credit card anymore. What a relief!”`,
   },
 ];
 
-export const CARDS = JSON.parse(localStorage.getItem("cards") || "[]");
+export const CARDS = [
+  {
+    id: 0,
+    cardImg: 1,
+    cardName: "Stock Helmet 1",
+    cardText: "It's the very first VR-Headset we start to produce",
+    cardTime: 1,
+  },
+  {
+    id: 1,
+    cardImg: 2,
+    cardName: "Stock Helmet 2",
+    cardText: "This headset was upgraded",
+    cardTime: 3,
+  },
+  {
+    id: 2,
+    cardImg: 3,
+    cardName: "Stock Helmet 3",
+    cardText:
+      "This headset is the last our invention! The best proposition on the market!",
+    cardTime: 666,
+  },
+];

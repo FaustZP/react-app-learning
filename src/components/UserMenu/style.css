@@ -10,7 +10,10 @@
   position: absolute;
   right: 55px;
   top: 68%;
-  display: none;
+}
+
+.menu-open {
+  display: block;
 }
 
 .menu-header {

@@ -4,13 +4,13 @@ import "./style.css";
 export const Pagination = () => {
   return (
     <div className="pagination">
-      <a href="javascript:prevPage()">
+      <button>
         <span>Prev</span>
-      </a>
+      </button>
       <div className="pages"></div>
-      <a href="javascript:nextPage()">
+      <button>
         <span>Next</span>
-      </a>
+      </button>
     </div>
   );
 };

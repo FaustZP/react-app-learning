@@ -13,8 +13,8 @@ import "../src/reset/reset.css";
 export const App = () => {
   return (
     <div className="container">
-      <Header />
       <Burger />
+      <Header />
       <BlockOne />
       <BlockTwo />
       <BlockThree />

@@ -71,16 +71,6 @@
   transition: 0.3s;
 }
 
-.user-pic__btn {
-  margin-left: 30px;
-  cursor: pointer;
-  display: none;
-}
-
-.user-pic__btn:hover {
-  transform: scale(1.2);
-  transition: transform 0.4s;
-}
 .container {
   max-width: 854px;
   width: 100%;

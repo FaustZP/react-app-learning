@@ -4,23 +4,65 @@ import { Button } from "../Button/Button";
 import { UserButton } from "../Button/Button";
 import { SignModalWindow } from "../ModalWindow/ModalWindow";
 import { NavLink } from "../NavLink/NavLink";
+import { UserMenu } from "../UserMenu/UserMenu";
+import { CardModalWindow } from "../ModalWindow/ModalWindow";
 import "./style.css";
 
 export const Header = () => {
-  const [isDialogVisible, setIsDialogVisible] = useState(false);
+  const [isSignInVisible, setIsSignInVisible] = useState(false);
 
-  const handleOpenDialog = () => {
-    setIsDialogVisible(true);
+  const handleOpenSignIn = () => {
+    setIsSignInVisible(true);
   };
 
-  const handleCloseDialog = () => {
-    setIsDialogVisible(false);
+  const handleCloseSignIn = () => {
+    setIsSignInVisible(false);
   };
 
-  const handleSubmitSignInDialog = (e) => {
+  const [isAddCardVisible, setIsAddCardVisible] = useState(false);
+
+  const handleOpenAddCard = () => {
+    setIsAddCardVisible(true);
+  };
+
+  const handleCloseAddCard = () => {
+    setIsAddCardVisible(false);
+  };
+
+  const [isUserMenuVisible, setIsUserMenuVisible] = useState(false);
+
+  const handleOpenUserMenu = () => {
+    setIsUserMenuVisible(true);
+  };
+
+  const handleCloseUserMenu = () => {
+    setIsUserMenuVisible(false);
+  };
+  const login = localStorage.getItem("userEmail");
+
+  const handleSubmitSignIn = (e) => {
     e.preventDefault();
-    console.log("Login user");
-    handleCloseDialog();
+    localStorage.setItem("userEmail", e.target.email.value);
+    handleCloseSignIn();
+  };
+
+  const handleSubmitAddCard = (e) => {
+    e.preventDefault();
+    let storedCards = JSON.parse(localStorage.getItem("cards") || "[]");
+    let inputCardName = e.target.name.value;
+    let inputCardText = e.target.descr.value;
+    let inputCardImgName = e.target.img.value;
+    let userCard = {
+      id: storedCards.length,
+      cardImg: inputCardImgName,
+      cardName: inputCardName,
+      cardText: inputCardText,
+      cardTime: Date.now(),
+    };
+    storedCards.push(userCard);
+    localStorage.setItem("cards", JSON.stringify(storedCards));
+    handleCloseAddCard();
+    window.location.reload();
   };
 
   return (
@@ -38,18 +80,35 @@ export const Header = () => {
             <NavLink link="#Features" label="Features" />
           </nav>
           <Button
-            buttonclass="sign_in_btn"
+            buttonclass={`sign_in_btn ${login ? "invisible" : "visible"}`}
             label="Sign In"
-            onClick={handleOpenDialog}
+            onClick={handleOpenSignIn}
           />
-          <UserButton id="userButton" />
+          <UserButton
+            buttonclass={`user-pic__btn ${login ? "visible" : "invisible"}`}
+            onClick={handleOpenUserMenu}
+          />
         </div>
+        {isUserMenuVisible && (
+          <UserMenu
+            open={isUserMenuVisible}
+            addCard={handleOpenAddCard}
+            onClose={handleCloseUserMenu}
+          />
+        )}
       </div>
-      {isDialogVisible && (
+      {isSignInVisible && (
         <SignModalWindow
-          open={isDialogVisible}
-          onSubmit={handleSubmitSignInDialog}
-          onClose={handleCloseDialog}
+          open={isSignInVisible}
+          onSubmit={handleSubmitSignIn}
+          onClose={handleCloseSignIn}
+        />
+      )}
+      {isAddCardVisible && (
+        <CardModalWindow
+          open={isAddCardVisible}
+          onSubmit={handleSubmitAddCard}
+          onClose={handleCloseAddCard}
         />
       )}
     </header>

@@ -21,9 +21,9 @@ export const StartButton = (prop) => {
   );
 };
 
-export const UserButton = () => {
+export const UserButton = ({ buttonclass, onClick }) => {
   return (
-    <button className="user-pic__btn">
+    <button className={buttonclass} onClick={onClick}>
       <img src={UserImage} alt="User Pic"></img>
     </button>
   );

@@ -1,4 +1,6 @@
 import React from "react";
+import { REVIEWS } from "../../mock";
+import { Reviews } from "../Reviews/Reviews";
 import "./style.css";
 
 export const BlockFive = () => {
@@ -9,7 +11,11 @@ export const BlockFive = () => {
         See what our customer say about us. It really matter for us. How good or
         bad we will make it for evaluation to make EhyalLive better.
       </p>
-      <div className="feed-row" id="feedRow"></div>
+      <div className="feed-row" id="feedRow">
+        {REVIEWS.map((each) => (
+          <Reviews key={each.id} item={each} />
+        ))}
+      </div>
     </div>
   );
 };

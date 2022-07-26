@@ -1,0 +1,54 @@
+.cell {
+  position: relative;
+  z-index: 3;
+  transition: all 0.3s;
+}
+
+.cell img {
+  width: 230px;
+  height: 180px;
+  border-radius: 5px;
+}
+
+.cell button {
+  cursor: pointer;
+}
+
+.cell:hover img {
+  filter: blur(2px);
+  transition: all 0.3s;
+}
+
+.cell:hover span {
+  zoom: 150%;
+  bottom: 3px;
+}
+
+.cell span {
+  padding: 13px 7px;
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  /* margin-bottom: 5px; */
+  background-color: rgba(80, 79, 79, 0.473);
+  backdrop-filter: blur(22.6977px);
+  border-radius: 0px 0px 0px 5px;
+  max-width: 110px;
+}
+.cell h3 {
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 8px;
+  line-height: 9px;
+  text-decoration-line: underline;
+  margin-bottom: 6px;
+}
+
+.cell p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 9px;
+}

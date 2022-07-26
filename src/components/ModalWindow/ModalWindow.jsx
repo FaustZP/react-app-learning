@@ -21,12 +21,14 @@ export const SignModalWindow = ({ open, onSubmit, onClose }) => {
         <form action="#" onSubmit={onSubmit} className="modal-input-form">
           <input
             type="email"
+            name="email"
             placeholder="Your Email"
             className="input"
             required
           />
           <input
             type="password"
+            name="password"
             placeholder="Your Password"
             className="input"
             required
@@ -40,9 +42,13 @@ export const SignModalWindow = ({ open, onSubmit, onClose }) => {
   );
 };
 
-export const CardModalWindow = () => {
+export const CardModalWindow = ({ open, onSubmit, onClose }) => {
   return (
-    <div className="modal-card-container" id="cardModal">
+    <div
+      className={`modal-card-container ${
+        open ? "modal-card-container-open" : ""
+      }`}
+    >
       <div className="modal-content">
         <div className="modal-header">
           <img src={ModalImage} alt="" className="head-img" />
@@ -51,12 +57,13 @@ export const CardModalWindow = () => {
         <main>
           <div className="modal-top">
             <h2 className="top-sign">Add new card</h2>
-            <span id="closeCard" className="close-btn">
+            <button id="closeCard" onClick={onClose} className="close-btn">
               &times;
-            </span>
+            </button>
           </div>
-          <form action="" className="modal-input-form" id="addCardForm">
+          <form action="#" onSubmit={onSubmit} className="modal-input-form">
             <input
+              name="name"
               type="text"
               placeholder="Card Name"
               className="input"
@@ -64,6 +71,7 @@ export const CardModalWindow = () => {
               id="inputCardName"
             />
             <input
+              name="descr"
               type="text"
               placeholder="Card Description"
               className="input"
@@ -71,6 +79,7 @@ export const CardModalWindow = () => {
               id="inputCardText"
             />
             <input
+              name="img"
               type="number"
               placeholder="Card image number (from 1 to 24)"
               className="input"

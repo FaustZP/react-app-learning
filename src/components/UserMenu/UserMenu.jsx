@@ -2,27 +2,29 @@ import React from "react";
 import Chevron from "../../asset/icon/chevron-up.svg";
 import "./style.css";
 
-export const UserMenu = () => {
+function logOut() {
+  localStorage.removeItem("userEmail");
+  console.log("Log Out");
+  window.location.reload();
+}
+
+export const UserMenu = ({ open, onClose, addCard }) => {
   return (
-    <div className="menu" id="userMenu">
+    <div className={`menu ${open ? "menu-open" : ""}`} id="userMenu">
       <div className="menu-header">
         <p>User menu</p>
-        <button className="menu-close-btn" id="closeMenuButton">
+        <button className="menu-close-btn" onClick={onClose}>
           <img src={Chevron} alt="" />
         </button>
       </div>
       <div className="menu-main">
-        <button
-          className="menu-btn"
-          name="dash"
-          onclick="actionModal('cardModal', 'closeCard')"
-        >
+        <button className="menu-btn" onClick={addCard}>
           Card management
         </button>
-        <a href="item.html" className="menu-btn" name="added">
+        <a href="#Grid" className="menu-btn" name="added">
           Recently Added
         </a>
-        <button className="menu-btn" id="log-out" onclick="logOut()">
+        <button className="menu-btn" onClick={logOut}>
           Log out
         </button>
       </div>
