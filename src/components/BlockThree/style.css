@@ -5,6 +5,7 @@
   align-self: center;
   flex-direction: column;
   justify-content: center;
+  z-index: 1;
 }
 
 .plank {
@@ -12,7 +13,7 @@
   max-width: 100%;
   min-width: 10%;
   height: auto;
-  z-index: -5;
+  z-index: 0;
   align-self: center;
 }
 
@@ -21,6 +22,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
 }
 
 .page-2-header {

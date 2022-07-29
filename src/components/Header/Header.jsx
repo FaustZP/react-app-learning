@@ -72,7 +72,6 @@ export const Header = () => {
           Light
         </a>
         <img src={PurpleTop} alt="" className="bg-img-head" />
-
         <div className="navigation">
           <nav>
             <NavLink link="#Home" label="Home" />

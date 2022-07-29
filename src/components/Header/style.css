@@ -10,6 +10,7 @@
   padding: 30px 60px;
   position: relative;
   flex-wrap: wrap;
+  z-index: 1;
 }
 
 .logo {
@@ -30,7 +31,7 @@
   position: absolute;
   top: 0;
   left: 50px;
-  z-index: -1;
+  z-index: 0;
 }
 
 .navigation {
@@ -49,9 +50,6 @@
   align-items: center;
   position: relative;
   transition: 0.3s;
-}
-
-.nav_link:not(:last-child) {
   margin-right: 30px;
 }
 

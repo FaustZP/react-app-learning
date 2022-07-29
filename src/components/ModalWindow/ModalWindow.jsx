@@ -26,6 +26,7 @@ export const SignModalWindow = ({ open, onSubmit, onClose }) => {
             name="email"
             placeholder="Your Email"
             className="input"
+            value={`${localStorage.getItem("suggested email") || ""} `}
             required
           />
           <input
@@ -108,23 +109,25 @@ export const ItemModalWindow = ({ open, onClose, item }) => {
         open ? "modal-item-container-open" : ""
       }`}
     >
-      <span id="closeItem" className="close-btn" onclick={onClose}>
-        &times;
-      </span>
-      <div>
-        <img
-          src={`./database/images/img${item.cardImg}.jpg`}
-          alt={item.cardName}
-          className="item-picture"
-        />
+      <div className="modal-content">
+        <button className="close-btn" onClick={onClose}>
+          &times;
+        </button>
+        <div>
+          <img
+            src={`./database/images/img${item.cardImg}.jpg`}
+            alt={item.cardName}
+            className="item-picture"
+          />
+        </div>
+        <h2 className="item-header">{item.cardName}</h2>
+        <p className="item-descr">{item.cardText}</p>
+        <button className="get_it_btn">
+          <span>Get it Now</span>
+        </button>
+        <img src={PurpleLeft} alt="" className="semi-left" />
+        <img src={PurpleRight} alt="" className="semi-right" />
       </div>
-      <h2 className="item-header">{item.cardName}</h2>
-      <p className="item-descr">{item.cardText}</p>
-      <button className="get_it_btn">
-        <span>Get it Now</span>
-      </button>
-      <img src={PurpleLeft} alt="" className="semi-left" />
-      <img src={PurpleRight} alt="" className="semi-right" />
     </div>
   );
 };

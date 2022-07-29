@@ -8,6 +8,7 @@
   padding: 0 90px;
   position: relative;
   flex-wrap: wrap;
+  z-index: 1;
 }
 
 .semi-left-2 {
@@ -20,13 +21,14 @@
 .sphere {
   position: absolute;
   right: 0;
-  opacity: 0.5;
+  z-index: 0;
 }
 
 .bottom-text {
   display: flex;
   flex-direction: column;
   max-width: 250px;
+  z-index: 2;
 }
 
 .bottom-text h2 {
@@ -52,6 +54,7 @@
   column-gap: 40px;
   row-gap: 20px;
   align-items: baseline;
+  z-index: 4;
 }
 
 .icon {

@@ -11,9 +11,9 @@ function logOut() {
 export const UserMenu = ({ open, onClose, addCard }) => {
   return (
     <div className={`menu ${open ? "menu-open" : ""}`} id="userMenu">
-      <div className="menu-header">
-        <p>User menu</p>
-        <button className="menu-close-btn" onClick={onClose}>
+      <div className="menu-header" onClick={onClose}>
+        <p>User menu:</p>
+        <button className="menu-close-btn">
           <img src={Chevron} alt="" />
         </button>
       </div>

@@ -8,7 +8,8 @@ import { BlockFive } from "./components/BlockFive/BlockFive";
 import { BlockSix } from "./components/BlockSix/BlockSix";
 import { Footer } from "./components/Footer/Footer";
 import { Burger } from "./components/BurgerMenu/Burger";
-import "../src/reset/reset.css";
+import "./reset/reset.css";
+import "./style.css";
 
 export const App = () => {
   return (

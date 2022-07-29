@@ -1,49 +1,12 @@
 import React, { useState } from "react";
 import { Button } from "../Button/Button";
 import { UserButton } from "../Button/Button";
-import { SignModalWindow } from "../ModalWindow/ModalWindow";
+import { CardModalWindow, SignModalWindow } from "../ModalWindow/ModalWindow";
 import { NavLink } from "../NavLink/NavLink";
 import { slide as Menu } from "react-burger-menu";
 import "./style.css";
 import "./burger.css";
-
-// export const Burger = () => {
-
-//   return (
-//     <Menu className="burger-menu">
-//       {/* <input type="checkbox" className="menu__toggle" />
-//       <label for="menu__toggle" className="menu__btn">
-//         <span></span>
-//       </label> */}
-//       <ul className="menu-box">
-//         <li>
-//           <Button
-//             buttonclass="burger-sign__btn"
-//             label="Sign In"
-//             onClick={handleOpenDialog}
-//           />
-//         </li>
-//         <UserButton />
-//         <li>
-//           <NavLink link="#Home" label="Home" />
-//         </li>
-//         <li>
-//           <NavLink link="#Company" label="Company" />
-//         </li>
-//         <li>
-//           <NavLink link="#Features" label="Features" />
-//         </li>
-//       </ul>
-//       {isDialogVisible && (
-//         <SignModalWindow
-//           open={isDialogVisible}
-//           onSubmit={handleSubmitSignInDialog}
-//           onClose={handleCloseDialog}
-//         />
-//       )}
-//     </Menu>
-//   );
-// };
+import { UserMenu } from "../UserMenu/UserMenu";
 
 const toggleMenu = ({ isOpen }) => {
   const menuWrap = document.querySelector(".bm-menu-wrap");
@@ -53,23 +16,63 @@ const toggleMenu = ({ isOpen }) => {
 };
 
 export const Burger = () => {
-  const [isDialogVisible, setIsDialogVisible] = useState(false);
+  const [isSignInVisible, setIsSignInVisible] = useState(false);
 
-  const handleOpenDialog = () => {
-    setIsDialogVisible(true);
+  const handleOpenSignIn = () => {
+    setIsSignInVisible(true);
   };
 
-  const handleCloseDialog = () => {
-    setIsDialogVisible(false);
-  };
-
-  const handleSubmitSignInDialog = (e) => {
-    e.preventDefault();
-    console.log("Login user");
-    handleCloseDialog();
+  const handleCloseSignIn = () => {
+    setIsSignInVisible(false);
   };
 
   const login = localStorage.getItem("userEmail");
+  const handleSubmitSignIn = (e) => {
+    e.preventDefault();
+    localStorage.setItem("userEmail", e.target.email.value);
+    console.log("Login user");
+    console.log("login: ", login);
+    handleCloseSignIn();
+  };
+
+  const [isUserMenuVisible, setIsUserMenuVisible] = useState(false);
+
+  const handleOpenUserMenu = () => {
+    setIsUserMenuVisible(true);
+  };
+
+  const handleCloseUserMenu = () => {
+    setIsUserMenuVisible(false);
+  };
+
+  const [isAddCardVisible, setIsAddCardVisible] = useState(false);
+
+  const handleOpenAddCard = () => {
+    setIsAddCardVisible(true);
+  };
+
+  const handleCloseAddCard = () => {
+    setIsAddCardVisible(false);
+  };
+
+  const handleSubmitAddCard = (e) => {
+    e.preventDefault();
+    let storedCards = JSON.parse(localStorage.getItem("cards") || "[]");
+    let inputCardName = e.target.name.value;
+    let inputCardText = e.target.descr.value;
+    let inputCardImgName = e.target.img.value;
+    let userCard = {
+      id: storedCards.length,
+      cardImg: inputCardImgName,
+      cardName: inputCardName,
+      cardText: inputCardText,
+      cardTime: Date.now(),
+    };
+    storedCards.push(userCard);
+    localStorage.setItem("cards", JSON.stringify(storedCards));
+    handleCloseAddCard();
+    window.location.reload();
+  };
 
   return (
     <Menu noOverlay onStateChange={toggleMenu}>
@@ -77,12 +80,13 @@ export const Burger = () => {
         <Button
           buttonclass={`sign_in_btn ${login ? "invisible" : "visible"}`}
           label="Sign In"
-          onClick={handleOpenDialog}
+          onClick={handleOpenSignIn}
         />
       </span>
       <span className="menu-item">
         <UserButton
           buttonclass={`user-pic__btn ${login ? "visible" : "invisible"}`}
+          onClick={handleOpenUserMenu}
         />
       </span>
       <span className="menu-item">
@@ -94,6 +98,27 @@ export const Burger = () => {
       <span className="menu-item">
         <NavLink link="#Features" label="Features" />
       </span>
+      {isUserMenuVisible && (
+        <UserMenu
+          open={isUserMenuVisible}
+          addCard={handleOpenAddCard}
+          onClose={handleCloseUserMenu}
+        />
+      )}
+      {isSignInVisible && (
+        <SignModalWindow
+          open={isSignInVisible}
+          onSubmit={handleSubmitSignIn}
+          onClose={handleCloseSignIn}
+        />
+      )}
+      {isAddCardVisible && (
+        <CardModalWindow
+          open={isAddCardVisible}
+          onSubmit={handleSubmitAddCard}
+          onClose={handleCloseAddCard}
+        />
+      )}
     </Menu>
   );
 };

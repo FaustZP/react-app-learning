@@ -49,3 +49,14 @@
 .pages {
   display: flex;
 }
+
+.disabled a {
+  text-decoration: line-through;
+  text-decoration-color: #612445;
+  text-decoration-thickness: 2px;
+  cursor: not-allowed;
+}
+
+.selected a {
+  text-decoration: underline;
+}

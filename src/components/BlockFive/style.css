@@ -17,6 +17,7 @@
   );
   border-radius: 7px;
   padding-bottom: 30px;
+  z-index: 5;
 }
 
 .fifth-block h2 {
