@@ -66,6 +66,7 @@ export const Footer = () => {
           open={isSignInVisible}
           onSubmit={handleSubmitSignIn}
           onClose={handleCloseSignIn}
+          preFill={localStorage.getItem("suggested email")}
         />
       )}
     </footer>

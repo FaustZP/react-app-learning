@@ -76,7 +76,7 @@
 .modal-item-container,
 .modal-card-container {
   position: fixed;
-  z-index: 30;
+  z-index: 80;
   top: 0;
   left: 0;
   width: 100%;

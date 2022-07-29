@@ -6,7 +6,7 @@ import PurpleRight from "../../asset/img/bg-semisphere-right.png";
 import { ModalButton } from "../Button/Button";
 import "./style.css";
 
-export const SignModalWindow = ({ open, onSubmit, onClose }) => {
+export const SignModalWindow = ({ open, onSubmit, onClose, preFill }) => {
   return (
     <div
       className={`modal-sign-container ${
@@ -24,9 +24,9 @@ export const SignModalWindow = ({ open, onSubmit, onClose }) => {
           <input
             type="email"
             name="email"
+            value={preFill}
             placeholder="Your Email"
             className="input"
-            value={`${localStorage.getItem("suggested email") || ""} `}
             required
           />
           <input

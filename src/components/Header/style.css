@@ -10,7 +10,7 @@
   padding: 30px 60px;
   position: relative;
   flex-wrap: wrap;
-  z-index: 1;
+  z-index: 50;
 }
 
 .logo {
@@ -19,7 +19,7 @@
   font-weight: 400;
   font-size: 23px;
   line-height: 29px;
-  z-index: 1;
+  z-index: 50;
 }
 
 .logo:hover {
